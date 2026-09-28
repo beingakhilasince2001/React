@@ -1,25 +1,18 @@
-const parent = React.createElement(
-  "div",
-  { id: "parent" },
-  [
-    React.createElement(
-      "div",
-      { id: "child1" },
-      [
-        React.createElement("h1", {}, "I am h1 tag"),
-        React.createElement("h2", {}, "I am h2 tag")
-      ]
-    ),
+import React from "react";
+import ReactDOM from "react-dom/client";
+import HeaderComponent from "./Header";
+import BodyComponent from "./Body";
 
-    React.createElement(
-      "div",
-      { id: "child2" },
-      [
-        React.createElement("h1", {}, "I am h1 tag"),
-        React.createElement("h2", {}, "I am h2 tag")
-      ]
-    )
-  ]
-);
-const root1 = ReactDOM.createRoot(document.getElementById('root'));
-root1.render(parent);
+
+const AppComponent = () => {
+    return (
+        
+        <div className="app">
+            <HeaderComponent/>
+            <BodyComponent/>
+        </div>
+    );
+};
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<AppComponent/>);
